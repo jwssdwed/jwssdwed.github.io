@@ -177,4 +177,10 @@ a.github:focus, a.linkedin:focus, a.facebook:focus{
     position: inherit;
     width: auto;
   }
+
+  div.container{
+    width: 100%;
+    top: 50px;
+    left: 0%;
+  }
 }
