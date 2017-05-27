@@ -179,8 +179,18 @@ a.github:focus, a.linkedin:focus, a.facebook:focus{
   }
 
   div.container{
+    position: absolute;
     width: 100%;
     top: 50px;
     left: 0%;
   }
+
+  div.blog-title{
+    font-size: 15pt;
+  }
+
+  div.email{
+    font-size: 23pt;
+  }
+
 }
