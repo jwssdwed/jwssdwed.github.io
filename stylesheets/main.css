@@ -31,7 +31,13 @@ div.about-me{
     top: 300px;
     width: 100%;
     height: 80px;
-    border-bottom: 1px dashed #cccccc;
+    border-bottom: 1px dashed #969696;
+}
+
+div.email{
+  position: relative;
+  font-size: 30pt;
+  float: right;
 }
 
 div.social-icon{
@@ -43,6 +49,85 @@ div.social-icon{
     vertical-align: middle;
     text-align: center;
     line-height: 80px;
+}
+
+div.article{
+  background-color: white;
+  box-shadow: 15px 5px 65px -10px rgba(78, 78, 78, 0.45);
+}
+
+div.blog-title{
+  position: relative;
+  height: 140px;
+  font-size: 20pt;
+  padding: 0 20px 0 20px;
+  font-weight: bold;
+  line-height: 140px;
+  vertical-align: middle;
+  border-bottom: 1px dashed #969696;
+}
+
+div.article-layout{
+  padding: 20px 20px 100px 20px;
+}
+
+div.footer{
+  box-shadow: -3px 0px 65px 0px rgba(78, 78, 78, 0.45);
+  background-image: url("../img/footer_map.jpg");
+  margin-top: 50px;
+  margin-bottom: 30px;
+  font-size: 12pt;
+  height: 200px;
+  text-align: center;
+}
+ul.footer-ul{
+  padding: 0 0 0 0;
+}
+ul.footer-ul li{
+  list-style:none;
+  margin:70px 10px 20px 10px;
+  display: inline-block;
+}
+
+p.article-title{
+  font-size: 25pt;
+  font-weight: bold;
+}
+
+p.information{
+  font-size: 12pt;
+  font-weight: bolder;
+  padding: 10px 0 10px 0;
+  color: #a0a0a0;
+}
+
+p.context{
+  font-size: 12pt;
+  line-height: 30px;
+  color: #4f4f4f;
+}
+
+a.read-more{
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  font-size: 14pt;
+  color: #2ec6db;
+}
+
+a.footer{
+  -webkit-transition-duration: 0.2s; /* Safari */
+  transition-duration: 0.2s;
+  text-decoration: none;
+  color: black;
+}
+
+a.footer:hover{
+  color:#2ec6db;
+  text-decoration: none;
+}
+
+a.footer:focus{
+  outline: none;
 }
 
 .facebook {
@@ -66,4 +151,30 @@ div.social-icon{
    padding: 3px 12px 3px 12px;
    border-radius: 40px;
    color: white;
+}
+
+a.email{
+  color: #2ec6db;
+}
+
+a.read-more:hover{
+  text-decoration: none;
+  color: black;
+}
+
+a.github:hover, a.linkedin:hover, a.facebook:hover{
+  color: white;
+  box-shadow: -2px 9px 24px -9px #000000
+}
+
+a.github:focus, a.linkedin:focus, a.facebook:focus{
+  color: white;
+  outline: none;
+}
+
+@media only screen and (max-width: 1100px){
+  div.about-fixed{
+    position: inherit;
+    width: auto;
+  }
 }
