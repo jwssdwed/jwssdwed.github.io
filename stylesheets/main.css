@@ -71,6 +71,14 @@ div.article-layout{
   padding: 20px 20px 100px 20px;
 }
 
+
+div.article-image{
+  padding: 30px 20px 30px 20px;
+  text-align: center;
+  width: 100%;
+}
+
+
 div.footer{
   box-shadow: -3px 0px 65px 0px rgba(78, 78, 78, 0.45);
   background-image: url("../img/footer_map.jpg");
@@ -107,11 +115,21 @@ p.context{
   color: #4f4f4f;
 }
 
+ul.context li{
+  font-size: 12pt;
+  line-height: 30px;
+  color: #4f4f4f;
+}
+
+img.article-image{
+  width: 100%;
+}
+
 a.read-more{
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   font-size: 14pt;
-  color: #2ec6db;
+  color: #2b95f2;
 }
 
 a.footer{
@@ -122,7 +140,7 @@ a.footer{
 }
 
 a.footer:hover{
-  color:#2ec6db;
+  color:#2b95f2;
   text-decoration: none;
 }
 
@@ -131,6 +149,8 @@ a.footer:focus{
 }
 
 .facebook {
+  -webkit-transition-duration: 0.2s; /* Safari */
+  transition-duration: 0.2s;
    background-color: #3b5998;
    padding: 3px 14px 3px 14px;
    border-radius: 30px;
@@ -139,22 +159,44 @@ a.footer:focus{
 }
 
 .linkedin {
+  -webkit-transition-duration: 0.2s; /* Safari */
+  transition-duration: 0.2s;
    background-color: #0077b5;
-   padding: 3px 12px 3px 12px;
+   padding: 3px 11px 3px 11px;
    border-radius: 40px;
    margin-right: 10px;
    color: white;
 }
 
 .github {
+  -webkit-transition-duration: 0.2s;  /* Safari */
+  transition-duration: 0.2s;
    background-color: #333333;
    padding: 3px 12px 3px 12px;
    border-radius: 40px;
    color: white;
 }
 
+.weibo {
+  -webkit-transition-duration: 0.2s;  /* Safari */
+  transition-duration: 0.2s;
+   background-color: #df2029;
+   padding: 3px 10px 3px 10px;
+   border-radius: 40px;
+   color: white;
+}
+
 a.email{
-  color: #2ec6db;
+  color: #2b95f2;
+}
+
+a.back-home{
+  color: #2b95f2;
+  text-decoration: none;
+}
+
+a.email:focus{
+  color: #2b95f2;
 }
 
 a.read-more:hover{
@@ -162,17 +204,17 @@ a.read-more:hover{
   color: black;
 }
 
-a.github:hover, a.linkedin:hover, a.facebook:hover{
+a.github:hover, a.linkedin:hover, a.facebook:hover, a.weibo:hover{
   color: white;
   box-shadow: -2px 9px 24px -9px #000000
 }
 
-a.github:focus, a.linkedin:focus, a.facebook:focus{
+a.github:focus, a.linkedin:focus, a.facebook:focus, a.weibo:focus{
   color: white;
   outline: none;
 }
 
-@media only screen and (max-width: 1100px){
+@media all and (max-width: 1100px){
   div.about-fixed{
     position: inherit;
     width: auto;
