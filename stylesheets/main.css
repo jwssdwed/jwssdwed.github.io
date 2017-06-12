@@ -236,3 +236,7 @@ a.github:focus, a.linkedin:focus, a.facebook:focus, a.weibo:focus{
   }
 
 }
+
+object:focus{
+  outline: none;
+}
