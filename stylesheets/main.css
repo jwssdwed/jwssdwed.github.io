@@ -113,6 +113,7 @@ p.context{
   font-size: 12pt;
   line-height: 30px;
   color: #4f4f4f;
+  text-align: justify;
 }
 
 ul.context li{

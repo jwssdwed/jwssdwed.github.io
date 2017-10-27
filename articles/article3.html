@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chengyu SHEN's personal blog</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/main.css">
+
+    <!--google web font-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/6eafb364a9.js"></script>
+  </head>
+  <body>
+      <div class = "container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class = "about-fixed">
+              <div class = "about-profile">
+                <img src="../img/chengyushen.jpg" width="100%" height="100%">
+              </div>
+              <div class="about-me">
+                <h4>Chengyu SHEN</h4>
+                <p style="color:#a0a0a0">Graduate Student in USC</p>
+              </div>
+              <div class="social-icon">
+                <a class="facebook" href="https://www.facebook.com/chengyu.shen.1" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a class="linkedin" href="https://www.linkedin.com/in/chengyu-shen-b87391b6/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+              
+                <a class="github" href="https://github.com/jwssdwed" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9">
+              <div class="article">
+              <div class="row">
+                <div class = "col-md-12">
+                    <div class="blog-title">
+                      <a href="../index.html" class="back-home">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i> Back to Homepage
+                      </a>
+                      <div class="email">
+                        <a href="mailto:shenchen@usc.edu" class="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                      </div>
+                    </div>
+                </div>
+                <div class = "col-md-12">
+                  <div class = "article-layout">
+                    <p class = "article-title">
+                      Swift Core Motion
+                    </p>
+                    <p class = "information">
+                      Oct 26, 2017 / Written by <span style="color: #2b95f2"> Chengyu</span>
+                    </p>
+                    <p class = "context">
+                      This article shared my experience in using the <span style="color: #2b95f2">CMMotionManager()</span> in Swift.
+                      <br><br>
+                      <span style="font-size: 15pt">1. What is Core Motion? What can we do with this package?</span>
+                      <br><br>
+                      If the developer wants to access to the motion- and environment-related data from the embedded hardware from the iPhone, including the accelerometers, gyroscopes, pedometers, magnetometers and barometers, the core motion library provides corresponding functions. One prevalent example is a game might use accelerometer and gyroscope data.
+                      <br>
+                      Here is my understanding of <span style="color: #2b95f2"> accelerometers </span> and <span style="color: #2b95f2"> gyroscopes </span>:
+                      Even though both value changes as the user changes the device position. Accelerometers is the absolute position for the device but the gyroscpes is the relative position.
+                    </p>
+                      <div class="article-image">
+                        <img src="../img/coreMotionExp.png" class="article-image">
+                        <p style="padding-top:10pt;font-style:italic;text-decoration:underline;color:#a0a0a0">&nbsp;&nbsp;coordinate in CoreMotion data&nbsp;&nbsp;</p>
+                      </div>
+                      <br>
+                    <p class = "context">
+                      <br><br>
+                      <span style="font-size: 15pt">2. How to use Core Motion properly</span>
+                      <br><br>
+                      Firstly, we need to import this library:
+                      <br>
+                      <code>
+                        import CoreMotion
+                      </code>
+                      <br>
+                      Then we need to initialize a CMMotionManager:
+                      <br>
+                      <code>
+                        var motionManager = CMMotionManager()
+                      </code>
+                      <br>
+                      The following steps is going to talk about how to keep track of the accelerator/gyroscopes values:
+                      <br>
+                      <pre><code>override func viewDidAppear(_ animated: Bool) {
+    //in case of generating acceleraometer data too repaidly.
+    motionManager.accelerometerUpdateInterval = 0.3
+    motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (data, err) in
+        if let myData = data {
+            print(myData.accleration.x)
+            print(myData.accleration.y)
+            print(myData.accleration.z)
+        }
+    }
+}</code></pre>
+                      <p class="context">
+                        For the above codes, you can use the function <span style="color: #2b2">motionManager.startGyroUpdates()</span> to keep track of gyroscopes value as well.
+                        <br>
+                        A new 3-dimension accelerometer data will be generated in every 0.3 seconds so you can call your own function inside this function.
+                        <br>
+                        I used one vertical slider whose cursor changes as the <span style="color: #2b2">y</span> value changes, therefore, I called the cursor change function whenever the value of myData changes.
+                      </p>
+                    </p>
+                  </div>
+                </div>
+                <div class = "col-md-12">
+                  <div class = "article-layout">
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="footer">
+                <ul class="footer-ul">
+                  <li><a href="../index.html" class="footer">Home</a></li>
+                  <li><a href="mailto:shenchen@usc.edu" class="footer">Contact</a></li>
+                  <li><a href="articles/aboutme.html" class="footer">About me</a></li>
+                </ul>
+                <p style="color: #878787">Copyright @ Chengyu SHEN. All rights reversed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </body>
+</html>
