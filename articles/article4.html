@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chengyu SHEN's personal blog</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/main.css">
+
+    <!--google web font-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/6eafb364a9.js"></script>
+  </head>
+  <body>
+      <div class = "container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class = "about-fixed">
+              <div class = "about-profile">
+                <img src="../img/chengyushen.jpg" width="100%" height="100%">
+              </div>
+              <div class="about-me">
+                <h4>Chengyu SHEN</h4>
+                <p style="color:#a0a0a0">Graduate Student in USC</p>
+              </div>
+              <div class="social-icon">
+                <a class="facebook" href="https://www.facebook.com/chengyu.shen.1" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a class="linkedin" href="https://www.linkedin.com/in/chengyu-shen-b87391b6/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+              
+                <a class="github" href="https://github.com/jwssdwed" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9">
+              <div class="article">
+              <div class="row">
+                <div class = "col-md-12">
+                    <div class="blog-title">
+                      <a href="../index.html" class="back-home">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i> Back to Homepage
+                      </a>
+                      <div class="email">
+                        <a href="mailto:shenchen@usc.edu" class="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                      </div>
+                    </div>
+                </div>
+                <div class = "col-md-12">
+                  <div class = "article-layout">
+                    <p class = "article-title">
+                      Establish MySQL and Node.js environment in Ubuntu Server
+                    </p>
+                    <p class = "information">
+                      Nov 9, 2017 / Written by <span style="color: #2b95f2"> Chengyu</span>
+                    </p>
+                    <p class = "context">
+                      This article shared my experience in deploying MySQL and Node.js remotelly with SSH Encryption connection and terminal.
+                      <br><br>
+                      <span style="font-size: 15pt">1. Connect to the remote server</span>
+                      <br><br>
+                      You can use embedded Terminal in Mac or PuTTY in Windows to connect to the server.
+                      <br>
+                      <code>
+                        ssh 'username'@'Ip_address'
+                      </code>
+                    </br>
+                      After you typing so, it will require you to enter the corresponding password if necessary. If you can see the following textfield. Congratulation! You have logged in successfully.
+                    </p>
+                      <div class="article-image">
+                        <img src="../img/enterServer.jpg" class="article-image">
+                        <p style="padding-top:10pt;font-style:italic;text-decoration:underline;color:#a0a0a0">&nbsp;&nbsp;Terminal output after login&nbsp;&nbsp;</p>
+                      </div>
+                      <br>
+                    <p class = "context">
+                      <br><br>
+                      <span style="font-size: 15pt">2. Download and install MySQL</span>
+                      <br><br>
+                      Before downloading your MySQL, please check whether you have download it before. By typing "mysql", if the terminal can recognize this instruction, you can skip the following steps to step 3. If not, please type:
+                      <br>
+                      <code>
+                        sudo apt-get update<br>
+                        sudo apt-get install mysql-server
+                      </code>
+                      <br>
+                      <span style="color: #2b95f2"> sudo</span> means you run this instruction as an admin. The download will take a few minutes and whenever you finish this step, typing <span style="color: #2b95f2">mysql</span> will help you enter the MySQL from terminal.
+                      You can also verify the version of your <span style="color: #2b95f2"> mysql </span> by typing: <code>mysql --v</code>.
+                      Please don't forget to setup your password for the database when download and installing. And after that you can type <span style="color: #2b95f2">mysql -u root -p</span> to enter the local database and you also need to enter the password you setup in the downloading process.
+                      <div class="article-image">
+                        <img src="../img/loginMysql.jpg" class="article-image">
+                        <p style="padding-top:10pt;font-style:italic;text-decoration:underline;color:#a0a0a0">&nbsp;&nbsp;After login your MySQL&nbsp;&nbsp;</p>
+                      </div>
+                      <br>
+                      However, some users may don't setup MySQL default password before, so you can simply type<span style="color: #2b95f2"> mysql </span> to enter. And you are also able to use the following instruction to reset / setup your password in MySQL database terminal.
+                      <br></br><code>mysql> update user set update user set authentication_string=password("NEWPASSWORD") where User='root';
+                    </code> 
+                      <br></br>
+                      <span style="font-size: 15pt">3. Install Node.js </span>
+                      <p class= "context">
+                      <br>
+                      Before downloading Node.js in your server, please check wheter you have already had it before by typing "node".
+                      <br>
+                      <code>
+                        sudo apt-get npm</br>
+                        npm init
+                      </code>
+                      <br>
+                      Congraduation! You can put your Node.js file into server and run it now!
+                      <br>
+                      But, if you want to execute MySQL instrucitons in your Node file, please don't forget to download the necessary plug-in node_modules as well:
+                      <br>
+                      <pre>npm install express
+npm install mysql</pre>
+                    </br>
+                      Here is one example to connect the MySQL in Node file.
+                      <pre>var mysql = require('mysql');
+
+var app, express;
+
+//establish a server
+express = require("express");
+
+app = express();
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "your_username",
+  password: "your_username's_corresponding_passwd",
+  database: "your database"
+});
+app.listen(8888) //any legal port you want to monitor</pre>
+                      </p>
+                      </p>
+                    </p>
+                  </div>
+                </div>
+                <div class = "col-md-12">
+                  <div class = "article-layout">
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="footer">
+                <ul class="footer-ul">
+                  <li><a href="../index.html" class="footer">Home</a></li>
+                  <li><a href="mailto:shenchen@usc.edu" class="footer">Contact</a></li>
+                  <li><a href="articles/aboutme.html" class="footer">About me</a></li>
+                </ul>
+                <p style="color: #878787">Copyright @ Chengyu SHEN. All rights reversed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </body>
+</html>
