@@ -55,7 +55,7 @@
                       Establish MySQL and Node.js environment in Ubuntu Server
                     </p>
                     <p class = "information">
-                      Nov 9, 2017 / Written by <span style="color: #2b95f2"> Chengyu</span>
+                      Nov 9, 2017 / Written by <span class="highlight"> Chengyu</span>
                     </p>
                     <p class = "context">
                       This article shared my experience in deploying MySQL and Node.js remotelly with SSH Encryption connection and terminal.
@@ -86,15 +86,15 @@
                         sudo apt-get install mysql-server
                       </code>
                       <br>
-                      <span style="color: #2b95f2"> sudo</span> means you run this instruction as an admin. The download will take a few minutes and whenever you finish this step, typing <span style="color: #2b95f2">mysql</span> will help you enter the MySQL from terminal.
-                      You can also verify the version of your <span style="color: #2b95f2"> mysql </span> by typing: <code>mysql --v</code>.
-                      Please don't forget to setup your password for the database when download and installing. And after that you can type <span style="color: #2b95f2">mysql -u root -p</span> to enter the local database and you also need to enter the password you setup in the downloading process.
+                      <span class="highlight"> sudo</span> means you run this instruction as an admin. The download will take a few minutes and whenever you finish this step, typing <span class="highlight">mysql</span> will help you enter the MySQL from terminal.
+                      You can also verify the version of your <span class="highlight"> mysql </span> by typing: <code>mysql --v</code>.
+                      Please don't forget to setup your password for the database when download and installing. And after that you can type <span class="highlight">mysql -u root -p</span> to enter the local database and you also need to enter the password you setup in the downloading process.
                       <div class="article-image">
                         <img src="../img/loginMysql.jpg" class="article-image">
                         <p style="padding-top:10pt;font-style:italic;text-decoration:underline;color:#a0a0a0">&nbsp;&nbsp;After login your MySQL&nbsp;&nbsp;</p>
                       </div>
                       <br>
-                      However, some users may don't setup MySQL default password before, so you can simply type<span style="color: #2b95f2"> mysql </span> to enter. And you are also able to use the following instruction to reset / setup your password in MySQL database terminal.
+                      However, some users may don't setup MySQL default password before, so you can simply type<span class="highlight"> mysql </span> to enter. And you are also able to use the following instruction to reset / setup your password in MySQL database terminal.
                       <br></br><code>mysql> update user set update user set authentication_string=password("NEWPASSWORD") where User='root';
                     </code> 
                       <br></br>
