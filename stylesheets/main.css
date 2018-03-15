@@ -102,6 +102,10 @@ p.article-title{
   font-weight: bold;
 }
 
+.article-subtitle{
+  font-size: 15pt;
+}
+
 p.information{
   font-size: 12pt;
   font-weight: bolder;
@@ -130,7 +134,11 @@ a.read-more{
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   font-size: 14pt;
-  color: #2b95f2;
+  color: #00A09c;
+}
+
+span.highlight{
+  color: #00A99C;
 }
 
 a.footer{
@@ -141,7 +149,7 @@ a.footer{
 }
 
 a.footer:hover{
-  color:#2b95f2;
+  color:#00a09c;
   text-decoration: none;
 }
 
@@ -188,16 +196,20 @@ a.footer:focus{
 }
 
 a.email{
-  color: #2b95f2;
+  color: #00A09C;
 }
 
 a.back-home{
-  color: #2b95f2;
+  color: #00a09c;
+  text-decoration: none;
+}
+
+a.back-home:hover{
   text-decoration: none;
 }
 
 a.email:focus{
-  color: #2b95f2;
+  color: #00a09c;
 }
 
 a.read-more:hover{

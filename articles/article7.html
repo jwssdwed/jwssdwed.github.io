@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chengyu SHEN's personal blog</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/main.css">
+
+    <!--google web font-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/6eafb364a9.js"></script>
+  </head>
+  <body>
+      <div class = "container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class = "about-fixed">
+              <div class = "about-profile">
+                <img src="../img/chengyushen.jpg" width="100%" height="100%">
+              </div>
+              <div class="about-me">
+                <h4>Chengyu SHEN</h4>
+                <p style="color:#a0a0a0">Graduate Student in USC</p>
+              </div>
+              <div class="social-icon">
+                <a class="facebook" href="https://www.facebook.com/chengyu.shen.1" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a class="linkedin" href="https://www.linkedin.com/in/chengyu-shen-b87391b6/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+              
+                <a class="github" href="https://github.com/jwssdwed" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9">
+              <div class="article">
+              <div class="row">
+                <div class = "col-md-12">
+                    <div class="blog-title">
+                      <a href="../index.html" class="back-home">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i> Back to Homepage
+                      </a>
+                      <div class="email">
+                        <a href="mailto:shenchen@usc.edu" class="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                      </div>
+                    </div>
+                </div>
+                <div class = "col-md-12">
+                  <div class = "article-layout">
+                    <p class = "article-title">
+                      How to understand HTTP?
+                    </p>
+                    <p class = "information">
+                      Mar 13, 2018 / Written by <span class="highlight"> Chengyu</span>
+                    </p>
+                    <p class = "context">
+                      The internet permeates into our life nowadays. Thanks to the appearances of various web-related applications, everyone could visit website conveniently. However, even though the majority of websites starting with http(s), only a few cybercitizens know the meaning of this. In order to get a better understanding of HTTP, this article explain this protocol's mechanism in an easy way.
+</br>
+<br>
+<p class = "article-subtitle">
+  Definition:
+</p>
+
+</br>
+<ul class = "context">
+  <li style = "font-size:11pt">HTTP is a well-known protocol defines how messages are transformed, formatted during web communication, and how web servers and browsers to implement / response those web request.
+  <li style = "font-size:11pt">HTTP is a comprehensive protocol defines both Request & Response, in which your computer send a request for a file with specific context to the server, and the server return the corresponding file in the response
+</ul>
+<br>
+<p class = "context" class = "article-subtitle">
+  How the server and client communicate?
+<br>
+<p class = "context">
+  The system architecture of HTTP is a client-server architecture, in which the client knows the identity of server but the server doesn’t have any information of client. In other word, the server can merely response the client’s request after it sent it, and we called it as <span class="highlight"> “Stateless”</span>. 
+  Even though the browser may use cookie or the website may use session, the HTTP itself is stateless and it doesn’t remember the state of client. 
+</br>
+  HTTP requires clients and servers to use text messages for communication.
+  The general format of this text message is like this:</br>
+<div class="article-image">
+  <img src="../img/httpMsg.png" class="article-image" style="width: 30%">
+  <p style="padding-top:10pt;font-style:italic;text-decoration:underline;color:#a0a0a0">&nbsp;&nbsp;HTTP Message Format&nbsp;&nbsp;</p>
+</div>
+<br>
+<br>
+<br>
+<p class="context">
+  Specifically, we could separate the text message into client-side and server-side respectively:
+</p>
+<div class="article-image">
+  <img src="../img/http_request.png" class="article-image" style="width: 90%">
+  <p style="padding-top:10pt;font-style:italic;text-decoration:underline;color:#a0a0a0">&nbsp;&nbsp;HTTP Request Format&nbsp;&nbsp;</p>
+</div>
+
+</br>
+<p class="context">
+  The request line has rigid format: method request-URI HTTP version<br>
+e.g.: request line: GET /test.html HTTP/1.1<br>
+The request header specify header attributes with header-name<br>
+e.g.: <br>
+HOST: jwssdwed.github.io<br>
+        ACCEPT: image/gif<br>
+        ACCEPT-Language: en, cn<br>
+For the detailed information, you can visit: <a target="_blank" href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields">HTTP_header_wiki</a>
+</p>
+<p class="context">
+  The status code contains protocol version and HTTP status code:<br>
+e.g. HTTP/1.1 200 OK<br>
+Detailed information about status code: <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Status_Code</a><br>
+And the response header performs similarly to the request header.<br>
+<div class="article-image">
+  <img src="../img/http_response.png" class="article-image" style="width: 90%">
+  <p style="padding-top:10pt;font-style:italic;text-decoration:underline;color:#a0a0a0">&nbsp;&nbsp;HTTP Request Format&nbsp;&nbsp;</p>
+</div>
+<p class=  "context">
+  The returned html context will be encapsulated in the body part in response message. And the browser, like Google Chrome, parses those information and renders in the browser.<br>
+</p>
+
+
+                  </div>
+                </div>
+                <div class = "col-md-12">
+                  <div class = "article-layout">
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="footer">
+                <ul class="footer-ul">
+                  <li><a href="../index.html" class="footer">Home</a></li>
+                  <li><a href="mailto:shenchen@usc.edu" class="footer">Contact</a></li>
+                  <li><a href="articles/aboutme.html" class="footer">About me</a></li>
+                </ul>
+                <p style="color: #878787">Copyright @ Chengyu SHEN. All rights reversed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </body>
+</html>
