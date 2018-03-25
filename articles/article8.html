@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chengyu SHEN's personal blog</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/main.css">
+
+    <!--google web font-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/6eafb364a9.js"></script>
+  </head>
+  <body>
+      <div class = "container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class = "about-fixed">
+              <div class = "about-profile">
+                <img src="../img/chengyushen.jpg" width="100%" height="100%">
+              </div>
+              <div class="about-me">
+                <h4>Chengyu SHEN</h4>
+                <p style="color:#a0a0a0">Graduate Student in USC</p>
+              </div>
+              <div class="social-icon">
+                <a class="facebook" href="https://www.facebook.com/chengyu.shen.1" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a class="linkedin" href="https://www.linkedin.com/in/chengyu-shen-b87391b6/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+              
+                <a class="github" href="https://github.com/jwssdwed" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9">
+              <div class="article">
+              <div class="row">
+                <div class = "col-md-12">
+                    <div class="blog-title">
+                      <a href="../index.html" class="back-home">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i> Back to Homepage
+                      </a>
+                      <div class="email">
+                        <a href="mailto:shenchen@usc.edu" class="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                      </div>
+                    </div>
+                </div>
+                <div class = "col-md-12">
+                  <div class = "article-layout">
+                    <p class = "article-title">
+                      Java Virtual Machine
+                    </p>
+                    <p class = "information">
+                      Mar 23, 2018 / Written by <span class="highlight"> Chengyu</span>
+                    </p>
+                    <p class = "context article-subtitle">
+                      Day 1:
+                    </br>
+                    <p class = "context">
+                      Java Memory Usage:
+                    </p>
+                    <p class = "context">
+                      Unlike C, C++, in which developers are required to manage the memory by themselves, Java developers don’t need to be bothered with those complicated issues. One the one hand, it is more efficient and easier to develop, on the other hand, developer may not be able to detect and solve problem productively when a memory problem occurs. Thus, in order to debug the memory issue in the future life, it is extremely important for a Java developer to be familiar with how a JVM manage memory.
+                    <br>
+                      When a JVM is executing a Java program, it will divide the memory into various separated areas, which have their own corresponding creating, ending time.
+                    <ul class = "context">
+                      <li>
+                        Program Counter Register
+                        <ul>
+                          <li>
+                            This takes a small memory area which is used to locate the executing codes, and indicate which line of code the machine is in currently. Every thread has its own personal Register.
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        Java Virtual Machine Stack
+                        <ul>
+                          <li>
+                            Every thread has its own VM Stack and the lifetime of them are same. Many developers prefer to separate the memory merely using heap and stack, however, this division is too narrow to Java memory areas. Usually, the stack has a local variable table/list in which all the primitive types and a reference to (an) object. Except for the long & double, all the type only takes one slot. The table is formed during compile, which means it will never change during executing/running time.
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        Native Method Stack
+                        <ul>
+                          <li>
+                            The effect of this is very similar to VM Stack, and the only difference is that this stack on1y supports the native method, which is written in any language except fro Java.
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        Java Heap:
+                      </li>
+                      <ul>
+                        <li>
+                          For most application, Java heap is the most significant area among all the memories that Java manipulates. Each process has one corresponding head and all the threads under this head share it. The usage of this is store all the objects when they are created. Here is one definition from JDK: “<i>The head is the JAVA Area from which memory for all class instances and arrays is allocated</i>”. Java heap is also the critical area for GC (Garbage Collection).
+                        </li>
+                      </ul>
+                      <li>
+                        Method Area:
+                        <ul>
+                          <li>
+                            Analogue to the Heap, all threads belonging to the same process share this area, and it used to store loaded classes, static variables, constants and compiled codes. Different from Heap, it can prevent the GC so that some variables defined inside can exist “<i>Permanently”</i>. 
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class = "col-md-12">
+                  <div class = "article-layout">
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="footer">
+                <ul class="footer-ul">
+                  <li><a href="../index.html" class="footer">Home</a></li>
+                  <li><a href="mailto:shenchen@usc.edu" class="footer">Contact</a></li>
+                  <li><a href="articles/aboutme.html" class="footer">About me</a></li>
+                </ul>
+                <p style="color: #878787">Copyright @ Chengyu SHEN. All rights reversed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </body>
+</html>
