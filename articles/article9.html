@@ -116,14 +116,16 @@
                         <p style="padding-top:10pt;font-style:italic;text-decoration:underline;color:#a0a0a0">&nbsp;&nbsp;Figure.2: Domain Hierarchy&nbsp;&nbsp;</p>
                     </div>
                     <p class = "context">
-                      Unfortunately, your browser cannot find the IP address from any cache, so, it decides to send the DNS query to DNS servers. DNS domain name hierarchy is a tree which is demonstrated in the figure.2. This tree structure increase DNS lookup efficiency and it works following this step (Figure.3)
+                      Unfortunately, your browser cannot find the IP address from any cache, so, it decides to send the DNS query to DNS servers. DNS domain name space is a tree structure which illustrates in the figure.2. This tree structure increase DNS lookup efficiency and it works following this step (Figure.3)
                     </p>
                     <ul class = "context">
                       <li>Your computer asks IP address of LinkedIn server(s).</li>
                       <li>ISP doesn’t have the IP address of LinkedIN Server(s) either, so it sends request to root DNS server.</li>
-                      <li>ISP doesn’t have the IP address of LinkedIN Server(s) either, so it sends request to root DNS server.</li>
+                      <li>Root DNS Server cannot resolve the name. But it can help peer find the IP address of Top level DNS server, namely .com Server in the scenario.</li>
                       <li>ISP sends request to .com DNS server.</li>
-                      <li>.com DNS server checks its database and it find the IP address of LinkedIn (maybe a couple of addresses), and sends it back to ISP server.</li>
+                      <li>.com Top level server has the IP address of all authenticated name servers whose suffixes is .com and IP address of each authentative name server for the second level domain.</li>
+                      <li>ISP get the address of the LinkedIn organization's DNS server, and send the request to it</li>
+                      <li>linkedIn server receive the request from ISP and return the IP address stored in its database.</li>
                       <li>ISP server send the IP address of <a href="">www.LinkedIn.com</a> back to you and it caches it in its local DNS database, as well.</li>
                     </ul>
                     <div class="article-image">
