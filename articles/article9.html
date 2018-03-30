@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chengyu SHEN's personal blog</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/main.css">
+
+    <!--google web font-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/6eafb364a9.js"></script>
+  </head>
+  <body>
+      <div class = "container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class = "about-fixed">
+              <div class = "about-profile">
+                <img src="../img/chengyushen.jpg" width="100%" height="100%">
+              </div>
+              <div class="about-me">
+                <h4>Chengyu SHEN</h4>
+                <p style="color:#a0a0a0">Graduate Student in USC</p>
+              </div>
+              <div class="social-icon">
+                <a class="facebook" href="https://www.facebook.com/chengyu.shen.1" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a class="linkedin" href="https://www.linkedin.com/in/chengyu-shen-b87391b6/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+              
+                <a class="github" href="https://github.com/jwssdwed" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-9">
+              <div class="article">
+              <div class="row">
+                <div class = "col-md-12">
+                    <div class="blog-title">
+                      <a href="../index.html" class="back-home">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i> Back to Homepage
+                      </a>
+                      <div class="email">
+                        <a href="mailto:shenchen@usc.edu" class="email"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+                      </div>
+                    </div>
+                </div>
+                <div class = "col-md-12">
+                  <div class = "article-layout">
+                    <p class = "article-title">
+                      Network Protocols: What has happended when you type "http://www.linkedin.com"
+                    </p>
+                    <p class = "information">
+                      Mar 29, 2018 / Written by <span class="highlight"> Chengyu</span>
+                    </p>
+                    <p class = "context">
+                      Thanks to the powerful search engines, like Google, Bing and Baidu, cyber-citizens find it is quiet convenient to search needed information by simply typing some keywords in the search bar. However, do you know what has happened when you type a famous link, such as “https://www.linkedin.com”? This article explores the <span>“magic”</span>   behind the web browser and afterward, you are about to have a better understanding on how to get corresponding context when you type a URL.
+                    </p>
+                    <p class = "article-subtitle">
+                      OSI Model and TCP/IP Protocol Layers
+                    </br>
+                    <p class = "context">
+                      The Open System Interconnection model (OSI) is a conceptional model which specifies the details about telecommunication without using any internal structure and technology. In this article, we will explain the process of internet communication through OSI Model Layers. To simplify, the TCP/IP protocol Layers is easier to understand. Instead of 7 different layers, TCP/IP combine the Application Layer, Performance Layer and Session Layer as Application Layer (As shown in the Figure.1) so that there is only 5 layers in TCP/IP Protocol Layers.
+                    </p>
+                    <div class="article-image">
+                        <img src="../img/tcp_layer.png" class="article-image" style="width: 70%">
+                        <p style="padding-top:10pt;font-style:italic;text-decoration:underline;color:#a0a0a0">&nbsp;&nbsp;Figure.1 Telecommunication Layers&nbsp;&nbsp;</p>
+                    </div>
+                    <p class = "article-subtitle" style = "font-size: 21pt;">
+                      Processes:
+                    </p>
+                    <p class = "context">
+                      This article separates the process by TCP/IP Protocol Layers.
+                    <br>
+                    <p class = "article-subtitle">
+                      First Step: Application Layer:
+                    </p>
+                    <p class = "context">
+                      When you type the “https://www.linkedin.com” in an browser, we start from the Application layer. It is obvious the protocol used in the application layer is <a href="./article7.html">https</a>, However. we couldn’t send the request to remote server, because we have not established the connection to the LinkedIn server at this moment. 
+                    </p>
+                    <p class = "article-subtitle">
+                      Second Step: move down to Transport Layer:
+                    </p>
+                    <p class = "context">
+                      In order to establish connection, we move top-down and go to the Transport Layer. Since the https is only for declaring protocol used in Application Layer, it is safe to remove it in the lower layer. Currently, we tend to make a TCP connection with LinkedIn Server(s). Nevertheless, the host-to-host connection requires IP address of both side, it is okay for us to know one peer IP, namely us, but the LinkedIn Server(s) addresses are unknown, right?
+                    </p>
+                    <p class = "article-subtitle">
+                      Third Step: move down to Network Layer:
+                    </p>
+                    <p class = "context">
+                      Thus, DNS (domain name system) helps us find the IP address from the domain name. You can treat it as a database whose entities are key-value pairs, which key is the domain name(url) and value is its IP address(es). This kind of pair is different from HashMap, in which you can merely get value from key but not key from value. If you have terminal in your computer, or some Linux-like command line interface, like PuTTy, you could type “nslookup www.linkedin.com” to perform the DNS service.
+                      <br>
+                      Even though it seems that internet needs to waste some time for searching the IP address and someone may argue that why don’t use the IP address straightforwardly, DNS is a user-friendly design in which all the domain name are some meaningful strings, like LinkedIn or Google. DNS resolve the problem that IP address is usually random numbers and it is less difficult for users to remember domain name than IP address.
+                      <br>
+                      Owning to some smart browsers, they help us to get the IP address from cache before sending requests to DNS servers:
+                      <br>
+                      <ul class = "context">
+                        <li>
+                          First, it checks the browser cache. The browser has cookies to speed up visiting. If you have visited “www.linkedin.com” recently, congratulate, it is probably you have already had the IP address of our company.
+                        </li>
+                        <li>Second, it checks the Operating System cache. If the browser doesn’t get IP address from its own cache, it would ask help from OS since OS also maintain IP addresses of some frequently visited website</li>
+                        <li>Third, it checks the router cache. Maybe in the Local Area Network (LAN), some users have visited “www.linkedin.com” before.</li>
+                        <li>Finally, it checks the ISP (you can simply think it is the internet provider, like one spectrum company in your area) DNS server. Since even though no one is interested in LinkedIn in your area, some customers of your internet provider are interested in our company service.</li>
+
+                      </ul>
+                    </p>
+                    <p class = "context">
+                      It is acknowledge that more information stored in cache, the more dangerous your information is. However, using cache is quiet prevent in most company since it is able to improve data transfer time.
+                    </p>
+                    <div class="article-image">
+                        <img src="../img/domainNameHierarchy.png" class="article-image" style="width: 70%">
+                        <p style="padding-top:10pt;font-style:italic;text-decoration:underline;color:#a0a0a0">&nbsp;&nbsp;Figure.2: Domain Hierarchy&nbsp;&nbsp;</p>
+                    </div>
+                    <p class = "context">
+                      Unfortunately, your browser cannot find the IP address from any cache, so, it decides to send the DNS query to DNS servers. DNS domain name hierarchy is a tree which is demonstrated in the figure.2. This tree structure increase DNS lookup efficiency and it works following this step (Figure.3)
+                    </p>
+                    <ul class = "context">
+                      <li>Your computer asks IP address of LinkedIn server(s).</li>
+                      <li>ISP doesn’t have the IP address of LinkedIN Server(s) either, so it sends request to root DNS server.</li>
+                      <li>ISP doesn’t have the IP address of LinkedIN Server(s) either, so it sends request to root DNS server.</li>
+                      <li>ISP sends request to .com DNS server.</li>
+                      <li>.com DNS server checks its database and it find the IP address of LinkedIn (maybe a couple of addresses), and sends it back to ISP server.</li>
+                      <li>ISP server send the IP address of <a href="">www.LinkedIn.com</a> back to you and it caches it in its local DNS database, as well.</li>
+                    </ul>
+                    <div class="article-image">
+                        <img src="../img/DNSRequest.png" class="article-image" style="width: 60%">
+                        <p style="padding-top:10pt;font-style:italic;text-decoration:underline;color:#a0a0a0">&nbsp;&nbsp;Figure.3: DNS Request Process&nbsp;&nbsp;</p>
+                    </div>
+                    <p class = "article-subtitle">
+                      Forth Step: move up to Transport Layer:
+                    </p>
+                    <p class = "context">
+                      Now, we have the IP addresses for both peers so that we could establish connection between them! TCP/IP three-handshake is the key process for TCP connection establishment, which is a three step process where client send messages with TCP header (only SYN/ACK are utilized in this step).
+                    </p>
+                    <ul class = "context">
+                      <li>Client want to connect to LinkedIn Server, it sends a TCP message with SYN flag to LinkedIn IP address we got from the last step.</li>
+                      <li>The LinkedIn Server receive request from client and it allows this certain client to connect to the server. Therefore, it send the TCP message with specified ACK flag.</li>
+                      <li>The client is happy since s/he receive the acknowledgment from The LinkedIn Server, it send the SYN message back and now two peers has established the TCP connection.</li>
+
+                    </ul>
+                    <p class = 'article-subtitle'>
+                      Fifth Step: move up to Application Layer:
+                    </p>
+                    <p class = 'context'>
+                      Based on the TCP connection, you can transfer data with The LinkedIn Server now! The GET request and POST request are two popular request for HTTP/S protocol, you can see the detail in <a href="./article7.html">this</a>.
+                    </p>
+                    <br>
+                    <br>
+                    <p class = 'context'>
+                      <span>Congrats</span>, I believe you have a better understanding about the mechanism behind browser when you type “https://www.linkedin.com”!
+
+                    </p>
+                    <p class = "article-subtitle">
+                      Add on:
+                    </p>
+                    <p class = "context">
+                      What we have discussed in the above is based on an assumption: you want to connect to the LinkedIn Server and transfer data with it via internet. However, if your IP address is in the same local network as LinkedIn, you don’t need to do the above things. Instead, you will use Data Linked Layer, in which ARP helps you get the MAC address of LinkedIn Server(s) and you can communicate with it straightly via MAC address.
+                    </p>
+                  </div>
+                </div>
+                <div class = "col-md-12">
+                  <div class = "article-layout">
+                  </div>
+                </div>
+                </div>
+              </div>
+              <div class="footer">
+                <ul class="footer-ul">
+                  <li><a href="../index.html" class="footer">Home</a></li>
+                  <li><a href="mailto:shenchen@usc.edu" class="footer">Contact</a></li>
+                  <li><a href="articles/aboutme.html" class="footer">About me</a></li>
+                </ul>
+                <p style="color: #878787">Copyright @ Chengyu SHEN. All rights reversed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </body>
+</html>

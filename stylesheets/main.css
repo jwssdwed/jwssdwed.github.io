@@ -104,6 +104,7 @@ p.article-title{
 
 .article-subtitle{
   font-size: 15pt;
+  color: #00A99C;
 }
 
 p.information{
@@ -137,7 +138,7 @@ a.read-more{
   color: #00A09c;
 }
 
-span.highlight{
+span{
   color: #00A99C;
 }
 
