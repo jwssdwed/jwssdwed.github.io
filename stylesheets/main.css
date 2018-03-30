@@ -102,7 +102,7 @@ p.article-title{
   font-weight: bold;
 }
 
-.article-subtitle{
+p.article-subtitle{
   font-size: 15pt;
   color: #00A99C;
 }
@@ -138,7 +138,7 @@ a.read-more{
   color: #00A09c;
 }
 
-span{
+span.highlight{
   color: #00A99C;
 }
 
